@@ -1,16 +1,15 @@
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'dart:io';
 
 //Upload image
-class PickImage extends GetxController{
-  File ? selectedImage;
+class ImageController extends GetxController{
+  Rx<String> selectedImage = "".obs;
 
   Future pickImageFromGallery() async {
     final returnedImage = await ImagePicker().pickImage(source: ImageSource.gallery);
     
     if (returnedImage != null) {
-      selectedImage = File(returnedImage.path);
+      selectedImage.value = returnedImage.path;
       update();
     }
   }
@@ -19,13 +18,13 @@ class PickImage extends GetxController{
     final returnedImage = await ImagePicker().pickImage(source: ImageSource.camera);
     
     if (returnedImage != null) {
-      selectedImage = File(returnedImage.path);
+      selectedImage.value = returnedImage.path;
       update();
     }
   }
 
   void resetImage() {
-    selectedImage = null;
+    selectedImage.value = "";
     update();
   }
 }

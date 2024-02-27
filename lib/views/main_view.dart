@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/views/components/form_body.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'components/upload_cow_image.dart';
+import '../constants/form_const.dart';
 
 class MainView extends StatelessWidget {
   const MainView({super.key});
@@ -15,7 +16,7 @@ class MainView extends StatelessWidget {
           size: 40,
         ),
         title: Text(
-          "แจ้งเกิดลูกโค",
+          titleBar,
           style: GoogleFonts.prompt(
             textStyle: const TextStyle(
               color: Colors.white,
@@ -27,11 +28,7 @@ class MainView extends StatelessWidget {
         backgroundColor: Colors.pink,
         toolbarHeight: 70,
       ),
-      body: Column(
-        children: [
-          CowImage(),
-        ],
-      ),
+      body: const FormBody(),
     );
   }
 }

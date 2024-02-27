@@ -1,33 +1,31 @@
 class Cow {
-  String img;
   String mother;
   String father;
-  String cowid;
+  String cowNumber;
   String nid;
   String rfid;
   String dpo;
   String name;
-  String birthdate;
-  String oxtype;
+  DateTime birthDate;
+  bool gender;
   String status;
-  String breed;
-  String house;
-  String crowd;
+  int breeds;
+  String cowshed;
+  String herd;
 
-  Cow(
-    this.img,
-    this.mother,
-    this.father,
-    this.cowid,
-    this.nid,
-    this.rfid,
-    this.dpo,
-    this.name,
-    this.birthdate,
-    this.oxtype,
-    this.status,
-    this.breed,
-    this.house,
-    this.crowd
-  );
+  Cow({
+    this.mother = "",
+    this.father = "",
+    this.cowNumber = "",
+    this.nid = "",
+    this.rfid = "",
+    this.dpo = "",
+    this.name = "",
+    DateTime? birthDate,
+    this.gender = false,
+    this.status = "",
+    this.breeds = 5,
+    this.cowshed = "",
+    this.herd = "",
+  }) : birthDate = birthDate ?? DateTime.now();
 }
